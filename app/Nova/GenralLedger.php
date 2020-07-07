@@ -3,7 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class GenralLedger extends Resource
@@ -46,6 +50,16 @@ class GenralLedger extends Resource
     {
         return [
             ID::make()->sortable(),
+            Date::make('Từ ngày','from'),
+            Date::make('Tới ngày','to'),
+            Number::make('Số tài khoản','account_number'),
+            Text::make('Số hiệu','license'),
+            Trix::make('Diễn giải','content')->hideFromIndex()  ,
+            Number::make('Số TK đối ứng','reciprocal_number')->hideFromIndex(),
+            Number::make('Nợ phát sinh','debt_number')->hideFromIndex(),
+            Number::make('Khả dụng','available_number')->hideFromIndex(),
+            Date::make('Ngày tạo','created_at')->hideFromIndex(), //published_at
+            Date::make('Chỉnh sửa lần cuối','updated_at')->hideFromIndex(),
         ];
     }
 

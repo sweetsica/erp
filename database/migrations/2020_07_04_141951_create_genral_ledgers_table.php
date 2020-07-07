@@ -15,6 +15,15 @@ class CreateGenralLedgersTable extends Migration
     {
         Schema::create('genral_ledgers', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('from');
+            $table->dateTime('to');
+            $table->string('account_number');
+            $table->dateTime('license');
+            $table->integer('number');
+            $table->string('content');
+            $table->integer('reciprocal_number');
+            $table->integer('debt_number');
+            $table->integer('available_number');
             $table->timestamps();
         });
     }

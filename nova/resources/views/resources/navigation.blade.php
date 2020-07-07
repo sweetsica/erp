@@ -9,7 +9,7 @@
 
     @foreach($navigation as $group => $resources)
         @if (count($groups) > 1)
-            <h4 class="ml-8 mb-4 text-xs text-white-50% uppercase tracking-wide">{{ $group }}</h4>
+            <h4 class="ml-8 mb-4 text-xs text-white-50% uppercsidebar-labelase tracking-wide">{{ $group }}</h4>
         @endif
 
         <ul class="list-reset mb-8">

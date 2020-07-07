@@ -9,13 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ajhaupt7/image-upload-preview": "^1.0",
         "alexbowers/nova-categorise-resources": "^1.0",
         "fideloper/proxy": "^4.2",
+        "froala/nova-froala-field": "^3.3",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/nova": "*",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "nibri10/nova-grid": "^1.0"
     },
     "repositories": [
         {
@@ -66,6 +69,11 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ]
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan nova:publish"
         ]
     }
 }
