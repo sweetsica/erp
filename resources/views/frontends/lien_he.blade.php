@@ -53,7 +53,7 @@
           <textarea class="form-control" rows="5" placeholder="Nội dung" name="content" required></textarea>
         </div>
       </div>
-
+        <input type="text" name="status" value="Đang chờ" hidden>
       <div class="form-group">
         <div class="col-sm-12">
           	<button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">

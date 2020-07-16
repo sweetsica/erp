@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function tin_tuc_moi_truong()
     {
-//        $data['lists']=Post::paginate(2);
+//        $data['lists']=Post1::paginate(2);
         $data['lists'] = Post::orderBy('id', 'desc')->paginate(6);
         $data['lastest_post'] = Post::orderBy('id', 'desc')->paginate(3);
         return view('frontends.tin-tuc-moi-truong',$data);
@@ -28,8 +28,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $data['title']= 'Danh mục';
-        return view('post/create',$data);
+//        $data['title']= 'Danh mục';
+//        return view('post/create',$data);
     }
 
     /**
@@ -40,18 +40,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $input = Input::get();
-        $post = Post::create($input);
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            $location = public_path('assets/images/post');
-            $file->move($location,$filename);
-            $post->image = $filename;
-        }
-        $post->save();
-        Session::flash('message','Đăng bài thành công!');
-        return redirect()->route('post.index');
+//        $input = Input::get();
+//        $post = Post1::create($input);
+//        if ($request->hasFile('image')){
+//            $file = $request->file('image');
+//            $filename = time().'.'.$file->getClientOriginalExtension();
+//            $location = public_path('assets/images/post');
+//            $file->move($location,$filename);
+//            $post->image = $filename;
+//        }
+//        $post->save();
+//        Session::flash('message','Đăng bài thành công!');
+//        return redirect()->route('post.index');
     }
 
     /**
@@ -62,11 +62,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-//        $data['post'] = Post::findOrFail($id);
+//        $data['post'] = Post1::findOrFail($id);
         $data['post'] = Post::findOrFail($id);
         $data['lastest_post'] = Post::orderBy('id', 'desc')->paginate(3);
 
-//        $data['test_post'] = Post::where('title', '=', $title)->firstOrFail();
+//        $data['test_post'] = Post1::where('title', '=', $title)->firstOrFail();
 
         return view('frontends.blog-details',$data);
 //        return null;
@@ -80,8 +80,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $data['post'] = Post::findOrFail($id);
-        return view('post/edit',$data);
+//        $data['post'] = Post1::findOrFail($id);
+//        return view('post/edit',$data);
     }
 
     /**
@@ -93,21 +93,21 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $input = Input::get();
-        $post = Post::findOrFail($id);
-        $post->fill($input);
-        if ($request->hasFile('image')){
-            $file = $request->file('image');
-            $filename = time().'.'.$file->getClientOriginalExtension();
-            $location = public_path('assets/images/post');
-            $file->move($location,$filename);
-            $oldImage=$post->image;
-            File::delete(public_path('assets/images/post/'. $oldImage));
-            $post->image = $filename;
-        }
-        $post->save();
-        Session::flash('message', 'Cập nhật bài viết thành công!');
-        return redirect()->route("post.index");
+//        $input = Input::get();
+//        $post = Post1::findOrFail($id);
+//        $post->fill($input);
+//        if ($request->hasFile('image')){
+//            $file = $request->file('image');
+//            $filename = time().'.'.$file->getClientOriginalExtension();
+//            $location = public_path('assets/images/post');
+//            $file->move($location,$filename);
+//            $oldImage=$post->image;
+//            File::delete(public_path('assets/images/post/'. $oldImage));
+//            $post->image = $filename;
+//        }
+//        $post->save();
+//        Session::flash('message', 'Cập nhật bài viết thành công!');
+//        return redirect()->route("post.index");
     }
 
     /**

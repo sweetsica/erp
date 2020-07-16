@@ -14,7 +14,7 @@ class HRInfomations extends Resource
      * @var string
      */
 
-    public static $category = "3-Quản lý nhân sự";
+    public static $category = "5-QL Nhân Sự";
     public static $model = 'App\HRInfomations';
     public static function label()
     {

@@ -2,6 +2,9 @@
 
 namespace App\Nova;
 
+
+use App\Nova\Metrics\IncomeTrend;
+use App\Nova\Metrics\PaidTrend;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
@@ -9,6 +12,9 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+
+
 
 class GenralLedger extends Resource
 {
@@ -50,10 +56,10 @@ class GenralLedger extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Số hiệu','license'),
             Date::make('Từ ngày','from'),
             Date::make('Tới ngày','to'),
             Number::make('Số tài khoản','account_number'),
-            Text::make('Số hiệu','license'),
             Trix::make('Diễn giải','content')->hideFromIndex()  ,
             Number::make('Số TK đối ứng','reciprocal_number')->hideFromIndex(),
             Number::make('Nợ phát sinh','debt_number')->hideFromIndex(),
@@ -71,7 +77,10 @@ class GenralLedger extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new IncomeTrend,
+            new PaidTrend,
+        ];
     }
 
     /**
@@ -99,12 +108,15 @@ class GenralLedger extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new DownloadExcel,
+        ];
     }
 
 

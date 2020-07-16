@@ -3,7 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class MechanicsManage extends Resource
@@ -14,7 +18,7 @@ class MechanicsManage extends Resource
      * @var string
      */
 
-    public static $category = "4-Quản lý thiết bị";
+    public static $category = "4-QL Thiết Bị";
     public static $model = 'App\MechanicsManage';
     public static function label()
     {
@@ -46,6 +50,12 @@ class MechanicsManage extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Tên mặt hàng','name'),
+            Text::make('Đơn vị','unit')->hideFromIndex(),
+            Number::make('Số lượng trong kho','total'),
+            Text::make('Nằm tại kho','warehouse'),
+            Boolean::make('Trạng thái','status'),
+            DateTime::make('Publish Post At','created_at')->hideFromIndex(),
         ];
     }
 
@@ -57,8 +67,11 @@ class MechanicsManage extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new \App\Nova\Metrics\MechanicsManage(),
+        ];
     }
+
 
     /**
      * Get the filters available for the resource.

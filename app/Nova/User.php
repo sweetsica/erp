@@ -20,7 +20,7 @@ class User extends Resource
     public static $category = "9-Người dùng";
     public static function label()
     {
-        return 'Tài sản cố định ';
+        return 'Thông tin người dùng';
     }
     /**
      * The single value that should be used to represent the resource when being displayed.

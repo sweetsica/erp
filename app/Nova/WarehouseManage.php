@@ -14,7 +14,7 @@ class WarehouseManage extends Resource
      * @var string
      */
 
-    public static $category = "4-Quản lý sản xuất";
+    public static $category = "2-QL Kho Hàng";
     public static $model = 'App\WarehouseManage';
     public static function label()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\ContactUSCount;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
@@ -17,7 +18,7 @@ class ContactUS extends Resource
      * @var string
      */
 
-    public static $category = "0-Quản Lý Thông Tin";
+    public static $category = "0-QL Thông Tin";
     public static $model = 'App\ContactUS';
     public static function label()
     {
@@ -51,7 +52,11 @@ class ContactUS extends Resource
             ID::make()->sortable(),
             Text::make('Tên người gửi','name'),
             Text::make('Số điện thoại','phone'),
-            Text::make('Nội dung','content'),
+            Select::make('Trạng thái','status')->options([
+                'Đã tiếp nhận'=>'Đã tiếp nhận',
+                'Đang xử lý'=>'Đang xử lý',
+                'Đã xử lý'=>'Đã xử lý'
+            ])->sortable(),
             Select::make('Danh mục','cate')->options([
                 'Cấp, cấp lại sổ  đăng ký chủ nguồn thải chất thải nguy hại'=>'Cấp, cấp lại sổ đăng ký chủ nguồn thải chất thải nguy hại',
                 'Thẩm định, phê duyệt phương án cải tạo, phục hồi môi trường đối với hoạt động khai thác khoáng sản'=>'Thẩm định, phê duyệt phương án cải tạo, phục hồi môi trường đối với hoạt động khai thác khoáng sản',
@@ -60,12 +65,10 @@ class ContactUS extends Resource
                 'Cấp, cấp lại Giấy xác nhận đủ điều kiện vệ bảo vệ môi trường trong nhập khẩu phế liệu làm nguyên liệu sản xuất'=>'Cấp, cấp lại Giấy xác nhận đủ điều kiện vệ bảo vệ môi trường trong nhập khẩu phế liệu làm nguyên liệu sản xuất',
                 'Cấp giấy chứng nhận đủ điều kiện nhập khẩu phế liệu'=>'Cấp giấy chứng nhận đủ điều kiện nhập khẩu phế liệu'
             ]),
+            Text::make('Nội dung','content'),
+
 //            Boolean::make('Trạng thái','status'),
-            Select::make('Trạng thái','status')->options([
-                'Đã tiếp nhận'=>'Đã tiếp nhận',
-                'Đang xử lý'=>'Đang xử lý',
-                'Đã xử lý'=>'Đã xử lý'
-            ]),
+
         ];
     }
 
@@ -77,7 +80,9 @@ class ContactUS extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new ContactUSCount,
+        ];
     }
 
     /**

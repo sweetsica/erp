@@ -14,7 +14,7 @@ class ForecastofDepreciation extends Resource
      * @var string
      */
 
-    public static $category = "2-Quản lý đầu tư";
+    public static $category = "3-QL Sản Xuất - Bán Hàng";
     public static $model = 'App\ForecastofDepreciation';
     public static function label()
     {

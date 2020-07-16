@@ -14,7 +14,7 @@ class PersonnelAdministration extends Resource
      * @var string
      */
 
-    public static $category = "3-Quản lý nhân sự";
+    public static $category = "2-QL Kho Hàng";
     public static $model = 'App\PersonnelAdministration';
     public static function label()
     {

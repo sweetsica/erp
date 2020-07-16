@@ -41,7 +41,7 @@ class CommentResource extends Resource
             MorphTo::make('Commentable', 'commentable')->display([PostResource::class => function ($resource) {
                 return $resource->title;
             }])->types([
-                PostResource::class => 'Post',
+                PostResource::class => 'Post1',
             ])->searchable(),
             BelongsTo::make('Author', 'author', UserResource::class),
             Text::make('Body', 'body')->rules('required', 'string', 'max:255'),

@@ -13,7 +13,7 @@ class CostObjectControlling extends Resource
      *
      * @var string
      */
-    public static $category = "2-Quản lý đầu tư";
+    public static $category = "3-QL Sản Xuất - Bán Hàng";
     public static $model = 'App\CostObjectControlling';
     public static function label()
     {

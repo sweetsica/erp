@@ -20,7 +20,7 @@ trait SearchControllerTests
         $original = $response->original;
 
         $this->assertEquals('posts', $original[1]['resourceName']);
-        $this->assertEquals('Post Resources', $original[1]['resourceTitle']);
+        $this->assertEquals('Post1 Resources', $original[1]['resourceTitle']);
         $this->assertEquals($post->id, $original[1]['title']);
         $this->assertEquals($user->id, $original[1]['resourceId']);
         $this->assertEquals('http://localhost/nova/resources/posts/'.$post->id, $original[1]['url']);

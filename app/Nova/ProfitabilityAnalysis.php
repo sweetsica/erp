@@ -13,7 +13,7 @@ class ProfitabilityAnalysis extends Resource
      *
      * @var string
      */
-    public static $category = "2-Quản lý đầu tư";
+    public static $category = "1-Kế toán tài chính";
     public static $model = 'App\ProfitabilityAnalysis';
     public static function label()
     {

@@ -85,7 +85,7 @@
 							<div class="sidebar-author sidebar-spacing">
 								<img src="{{asset('assets/images/post/8717823_n.jpg')}}" alt="">
 								<h6>Bảo Bảo </h6>
-								<p>Thăm ngàn & kiệt ngần <br> Xây dựng & phát triển</p>
+								<p>Xây dựng & phát triển</p>
 								<ul class="social-icon">
 									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

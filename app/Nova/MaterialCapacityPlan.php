@@ -14,7 +14,7 @@ class MaterialCapacityPlan extends Resource
      * @var string
      */
 
-    public static $category = "4-Quản lý sản xuất";
+    public static $category = "3-QL Sản Xuất - Bán Hàng";
     public static $model = 'App\MaterialCapacityPlan';
     public static function label()
     {

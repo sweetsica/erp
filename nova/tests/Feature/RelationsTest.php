@@ -66,7 +66,7 @@ class RelationsTest extends IntegrationTest
 
     public function test_changing_field_attribute_by_meta()
     {
-        $field = HasMany::make('Post', 'posts', UserResource::class)->withMeta(['listable' => false]);
+        $field = HasMany::make('Post1', 'posts', UserResource::class)->withMeta(['listable' => false]);
 
         $this->assertFalse($field->jsonSerialize()['listable']);
     }

@@ -18,7 +18,7 @@ class CreateGenralLedgersTable extends Migration
             $table->dateTime('from');
             $table->dateTime('to');
             $table->string('account_number');
-            $table->dateTime('license');
+            $table->string('license');
             $table->integer('number');
             $table->string('content');
             $table->integer('reciprocal_number');

@@ -3,19 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Ajhaupt7\ImageUploadPreview\ImageUploadPreview;
-use Froala\NovaFroalaField\Froala;
 
-class Post extends Resource
+class DepartmentManage extends Resource
 {
     /**
      * The model the resource corresponds to.
@@ -23,18 +16,19 @@ class Post extends Resource
      * @var string
      */
 
-    public static $category = "0-Quản lý thông tin";
-    public static $model = 'App\Post';
+    public static $category = "5-QL Nhân Sự";
+    public static $model = 'App\DepartmentManage';
     public static function label()
     {
-        return 'Tin tức';
+        return 'Phòng ban';
     }
+
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -55,17 +49,9 @@ class Post extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Title'),
-            ImageUploadPreview::make('Image')->disk('public')->path('post_images'),
-            Froala::make('Content'),
-            DateTime::make('Publish Post At','created_at')->hideFromIndex(), //published_at
-            DateTime::make('Publish Until','updated_at')->hideFromIndex(),
-//            BelongsTo::make('Tác giả','User',User::class)->size('w-1/3')->rules('required'),
-            Select::make('Category','cate')->options([
-                'tintrongnuoc' => 'Tin Trong Nước',
-                'tinquocte'     => 'Tin Quốc Tế'
-            ]),
-            Boolean::make('Status'),
+            Text::make('Tên phòng ban','name'),
+            Text:: make('Mô tả phòng ban','description'),
+            DateTime::make('Created At'),
         ];
     }
 

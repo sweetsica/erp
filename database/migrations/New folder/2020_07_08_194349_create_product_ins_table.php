@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHRManagesTable extends Migration
+class CreateProductInsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateHRManagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('h_r_manages', function (Blueprint $table) {
+        Schema::create('product_ins', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateHRManagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('h_r_manages');
+        Schema::dropIfExists('product_ins');
     }
 }

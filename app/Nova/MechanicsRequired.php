@@ -14,7 +14,7 @@ class MechanicsRequired extends Resource
      * @var string
      */
 
-    public static $category = "4-Quản lý thiết bị";
+    public static $category = "4-QL Thiết Bị";
     public static $model = 'App\MechanicsRequired';
     public static function label()
     {

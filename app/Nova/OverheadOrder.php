@@ -14,7 +14,7 @@ class OverheadOrder extends Resource
      * @var string
      */
 
-    public static $category = "2-Quản lý đầu tư";
+    public static $category = "2-QL Kho Hàng";
     public static $model = 'App\OverheadOrder';
     public static function label()
     {

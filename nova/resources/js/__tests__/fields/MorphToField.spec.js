@@ -23,7 +23,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -74,7 +74,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -126,7 +126,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -186,7 +186,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -242,7 +242,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -302,7 +302,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -358,7 +358,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -397,7 +397,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -445,7 +445,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -491,7 +491,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -527,7 +527,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {
@@ -570,7 +570,7 @@ describe('MorphToField', () => {
           morphToTypes: [
             {
               display: 'Post',
-              type: 'App\\Nova\\Post',
+              type: 'App\\Nova\\Post1',
               value: 'posts',
             },
             {

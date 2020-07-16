@@ -69,7 +69,7 @@ class ResourceCreationTest extends IntegrationTest
     {
         $response = $this->withExceptionHandling()
                         ->postJson('/nova-api/posts', [
-                            'title' => 'Test Post',
+                            'title' => 'Test Post1',
                             'user' => '',
                         ]);
 
@@ -343,7 +343,7 @@ class ResourceCreationTest extends IntegrationTest
 
         $response = $this->withExceptionHandling()
             ->postJson('/nova-api/posts', [
-                'title' => 'Test Post',
+                'title' => 'Test Post1',
                 'user' => '',
             ]);
 
