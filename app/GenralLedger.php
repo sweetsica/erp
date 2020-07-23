@@ -12,4 +12,10 @@ class GenralLedger extends Model
         'created_at' => 'date',
         'updated_at' => 'date'
     ];
+
+    public function Paid()
+    {
+        return $this->belongsToMany(Paid::class);
+    }
+
 }
