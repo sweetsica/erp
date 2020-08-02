@@ -12,10 +12,19 @@ class GenralLedger extends Model
         'created_at' => 'date',
         'updated_at' => 'date'
     ];
-
+//    public function Income()
+//    {
+//        return $this->belongsToMany(Income::class);
+//    }
+    public function Income()
+    {
+        return $this->hasMany(Income::class);
+    }
     public function Paid()
     {
-        return $this->belongsToMany(Paid::class);
+        return $this->hasMany(Paid::class);
     }
+
+
 
 }

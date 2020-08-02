@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use App\Nova\Metrics\IncomeTrend;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Income extends Resource
@@ -21,7 +23,7 @@ class Income extends Resource
     public static $model = 'App\Income';
     public static function label()
     {
-        return 'Tổng thu';
+        return 'Biên lai thu';
     }
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -49,7 +51,10 @@ class Income extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Tên mục thu','name'),
             Number::make('Thu nhập','income_value'),
+            Text::make('Mô tả mục thu','desciption')->hideFromIndex(),
+            BelongsTo::make('GenralLedger'),
             DateTime::make('Created At')->hideFromIndex(), //published_at
         ];
     }

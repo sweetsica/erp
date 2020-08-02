@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use App\Nova\Metrics\PaidTrend;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Paid extends Resource
@@ -21,7 +23,7 @@ class Paid extends Resource
     public static $model = 'App\Paid';
     public static function label()
     {
-        return 'Tổng chi';
+        return 'Biên lai chi';
     }
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -49,8 +51,12 @@ class Paid extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Têm mục chi','name'),
             Number::make('Chi','paid_value'),
+            Text::make('Mô tả mục chi','desciption')->hideFromIndex(),
+            BelongsTo::make('GenralLedger'),
             DateTime::make('Created At')->hideFromIndex(), //published_at
+
         ];
     }
 

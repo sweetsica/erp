@@ -6,7 +6,10 @@ namespace App\Nova;
 use App\Nova\Metrics\IncomeTrend;
 use App\Nova\Metrics\PaidTrend;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -35,7 +38,7 @@ class GenralLedger extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'license';
 
     /**
      * The columns that should be searched.
@@ -66,6 +69,11 @@ class GenralLedger extends Resource
             Number::make('Khả dụng','available_number')->hideFromIndex(),
             Date::make('Ngày tạo','created_at')->hideFromIndex(), //published_at
             Date::make('Chỉnh sửa lần cuối','updated_at')->hideFromIndex(),
+
+//            BelongsToMany::make('Phiếu thu','Income',Income::class),
+            hasMany::make('Phiếu thu','Income',Income::class),
+            hasMany::make('Phiếu chi','Paid',Paid::class),
+            
         ];
     }
 

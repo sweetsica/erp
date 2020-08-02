@@ -16,6 +16,7 @@ class CreatePaidsTable extends Migration
         Schema::create('paids', function (Blueprint $table) {
             $table->id();
             $table->integer('paid');
+            $table->string('desciption');
             $table->timestamps();
         });
     }
